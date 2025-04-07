@@ -2,32 +2,84 @@
 
 This is the backend project for the job application at **FCT**.
 
-## 🚀 Getting Started
+Front-end: https://github.com/rafiuskdev/fct-test-frontend
 
-To run this project locally, follow the steps below.
+## 🚀 Technologies
 
-### 1. Clone the Repository
+- PHP 8.2
+- Laravel 12
+- Docker
+- Nginx
+- Pexels API
+
+## 🏗️ Architecture & Patterns
+
+- Clean Architecture
+- Repository Pattern
+- Service Layer Pattern
+- DTO Pattern
+- SOLID Principles
+- PSR-4 Autoloading
+
+## 📦 Dependencies
+
+Before you begin, ensure you have the following installed:
+- Docker & Docker Compose 
+
+## 🛠️ Setup
+
+1. Clone the repository
+2. Copy `.env.example` to `.env`
+3. Set up your Pexels API key in `.env`
+4. Run the application using Docker:
 
 ```bash
-git clone https://github.com/rafiuskdev/fct-test-backend.git
+docker-compose up -d
 ```
 
+The application will be available at `http://localhost:8000`
 
+## 📡 API Endpoints
 
-### 2. Create a .env File
-
-```bash
-CACHE_DRIVER=file
-
-APP_KEY=base64:zipEJ1vL2VRBtyDAxLM8VpuHkGYTFILoNttxsIRPoZA=
-PEXELS_API_KEY=
-PEXELS_BASE_URI=https://api.pexels.com
+### Video Search
 ```
-⚠️ Make sure to set your actual PEXELS_API_KEY in the .env file. If you don't, you can use the following example: ```WnDOvUG7WBHmBzn6Nx4zXOC5ftb3iruZvlPtrqFWNKDgGjYgbUil4qIP```
+GET /api/videos
+```
 
+Query Parameters:
+- `query` (optional): Search term
+- `page` (required): Page number
+- `per_page` (required): Items per page
+- `locale` (optional): Language code
+- `size` (optional): Video size
+- `is_popular` (required): Boolean
+- `orientation` (optional): Video orientation
 
-### 3. Start the Project with Docker
+### Get Video by ID
+```
+GET /api/videos/{id}
+```
+
+## 🏗️ Project Structure
+
+```
+src/
+└── Core/
+    ├── Domain/
+    │   ├── Entities/
+    │   ├── Repositories/
+    │   └── Services/
+    └── Infra/
+        ├── Http/
+        │   ├── Controllers/
+        │   └── Requests/
+        └── Repositories/
+```
+
+## 🔧 Development
+
+To start development:
 
 ```bash
-docker compose up
+docker-compose up -d
 ```
