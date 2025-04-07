@@ -31,4 +31,4 @@ USER www
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+CMD ["sh", "-c", "composer install && php-fpm"]

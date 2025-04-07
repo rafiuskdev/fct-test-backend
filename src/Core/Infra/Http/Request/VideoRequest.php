@@ -9,12 +9,13 @@ class VideoRequest extends FormRequest
     public function rules(): array
     {
         return [
-          'query' => ['required', 'string'],
+          'query' => ['nullable', 'string'],
           'page' => ['required', 'numeric'],
           'per_page' => ['required', 'numeric'],
           'locale' => ['nullable', 'string'],
           'size' => ['nullable', 'string'],
-          'is_popular' => ['required', 'boolean']
+          'is_popular' => ['required', 'boolean'],
+          'orientation' => ['nullable', 'string'],
         ];
     }
 }
