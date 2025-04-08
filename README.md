@@ -30,7 +30,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository
 2. Copy `.env.example` to `.env`
-3. Set up your Pexels API key in `.env`
+3. Set up your Pexels API key in `.env` (you can use this example key: `BzMjOjkwJP3D9v8IlcuKt8aTZ70RtdWMsl5sgp9GMIGiK25cCPqoF2Gb`)
 4. Run the application using Docker:
 
 ```bash
